@@ -9,8 +9,9 @@
 import Foundation
 
 //Configure before running to specify which methods you want to run, Its for debugging puposes.
-let runCustomSyncOperation = true
-let runCustomAsyncOperation = true
+let runCustomSyncOperation = false
+let runCustomAsyncOperation = false
+let runOperationQueue = true
 
 
 //Use Operator to run different kinds of Operations
@@ -26,7 +27,13 @@ if runCustomAsyncOperation {
     myOperator.runAsynchronousOperation()
 }
 
+//Run some operation using Operation Queue
+if runOperationQueue {
+    myOperator.pefromOperationsUsingQueue()
+}
 
+//Just to keep the main runloop runnning
+_ = readLine()
 
 
 

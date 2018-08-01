@@ -21,7 +21,7 @@ class OperationFactory {
         
         let operation = BlockOperation {
             //This is the block which actualy does the task associated with this operation
-            print("Task in the block operation.")
+            print("Task in the block operation is executing.")
         }
         return operation
     }

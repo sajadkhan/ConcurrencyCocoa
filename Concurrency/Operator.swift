@@ -67,8 +67,29 @@ class Operator {
     
     //MARK: - Perform Operations Using Operation Queue
     func pefromOperationsUsingQueue() {
+        
+        //Create a queue, OperationQueue is subclass of NSObject it has no initializer itself
         let queue = OperationQueue()
         
+        //Create some operations
+        let syncOperation = operationFactory.customSynchronousOperation()
+        let asyncOperation = operationFactory.customAsynchronousOperation()
+        let blockOperation = operationFactory.blockOperation()
+        
+        //Add them as an array
+        queue.addOperations([syncOperation, asyncOperation, blockOperation], waitUntilFinished: false)
+        
+        //Add another operation without actually creating an operation
+        queue.addOperation {
+            print("Operation added directoly to queue is executing.")
+        }
+        
+        //As operations finish they are remove from queue, so we can check if all operations are finished or not.
+        //operationCount may be changed by the time we get it value, So monitoring it using KVO is a better approach but as in this case we are not doing some work that needs accurate value its ok to use it this way.
+        while queue.operationCount > 0 {
+            print("operations in queue = \(queue.operationCount)")
+        }
+        print("All operations are finished, Queue is empty")
     }
 }
 
