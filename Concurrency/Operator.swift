@@ -15,15 +15,17 @@ import Foundation
 
 class Operator {
     //Create an operation factory instance to create different operation.
-    private let operations = OperationFactory()
+    private let operationFactory = OperationFactory()
+    
+    //MARK: - Custom Synchronous Operation
     
     //Run a custom Synronous Operation
     func runSynchronousOperation() {
         //Get an instance of operation, look at Operations instance method customSyncrounousOperation to know how this operation is created.
-        let synchrounousOperation = operations.customSyncronousOperation()
+        let synchrounousOperation = operationFactory.customSynchronousOperation()
         
         //Start the operation
-        print("Custom sync operation start")
+        print("Custom sync operation start called")
         synchrounousOperation.start()
         
         //As this is a syncrounous operation below code will only executed once the operation is comolete
@@ -31,15 +33,39 @@ class Operator {
         
         //Now after operation comletion look at the results of the operation
         if let image = synchrounousOperation.image {
-            print("Fetche Image dimensions = \(image.size.width) X \(image.size.height)")
+            print("Fetched Image dimensions = \(image.size.width) X \(image.size.height)")
             if let data = image.tiffRepresentation {
                 print("Fetched Image file size = \(data.count)")
             }
         }
     }
     
-    //Run a s
+    
+    //MARK: - Custom Asynchronous Operation
+    
+    //Run a custom asynchronous method
     func runAsynchronousOperation() {
+        //Get an asynchronous operation from factory
+        let asynchronousOperation = operationFactory.customAsynchronousOperation()
+        
+        //Start the operation
+        print("Custom Async method start called")
+        asynchronousOperation.start()
+        
+        //As we have started a async operation we haven't blocked our thread, So we can start some thing else here and both will execute parallel.
+        //Keep priting dots while operation is performing its task and not finished
+        //It is also possible to use KVO to achieve this by adding an observer on isFinished property, but for simplicity we are using this approach. 
+        while !asynchronousOperation.isFinished {
+            print(".")
+        }
+        
+        //When operation finished we can look at its result.
+        if let image = asynchronousOperation.image {
+            print("Fetched Image dimensions = \(image.size.width) X \(image.size.height)")
+            if let data = image.tiffRepresentation {
+                print("Fetched Image file size = \(data.count)")
+            }
+        }
         
     }
 }
