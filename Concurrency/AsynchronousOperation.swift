@@ -35,6 +35,11 @@ class AsynchronousOperation: Operation {
         }
         didSet {
             didChangeValue(forKey: "isExecuting")
+            if pExecuting == true {
+                print("Custom Async operation is executing")
+            } else {
+                print("Custom Async method is not executing")
+            }
         }
     }
     private var pFinished: Bool = false {
@@ -43,6 +48,9 @@ class AsynchronousOperation: Operation {
         }
         didSet {
             didChangeValue(forKey: "isFinished")
+            if pFinished == true {
+                print("Custom Async operation has finished")
+            }
         }
     }
     
@@ -61,6 +69,7 @@ class AsynchronousOperation: Operation {
     
     override func start() {
         //Check if is cancelled
+        print("Custom Async operation has started")
         if isCancelled {
             //If it cancelled move the operation to finish state
             pFinished = true

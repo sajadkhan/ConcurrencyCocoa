@@ -9,7 +9,7 @@
 import Foundation
 
 //Configure before running to specify which methods you want to run, Its for debugging puposes.
-let runCustomSyncOperation = false
+let runCustomSyncOperation = true
 let runCustomAsyncOperation = true
 
 

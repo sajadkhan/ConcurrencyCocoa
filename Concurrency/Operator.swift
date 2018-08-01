@@ -25,12 +25,9 @@ class Operator {
         let synchrounousOperation = operationFactory.customSynchronousOperation()
         
         //Start the operation
-        print("Custom sync operation start called")
         synchrounousOperation.start()
         
         //As this is a syncrounous operation below code will only executed once the operation is comolete
-        print("Custom sync operation ends")
-        
         //Now after operation comletion look at the results of the operation
         if let image = synchrounousOperation.image {
             print("Fetched Image dimensions = \(image.size.width) X \(image.size.height)")
@@ -49,7 +46,6 @@ class Operator {
         let asynchronousOperation = operationFactory.customAsynchronousOperation()
         
         //Start the operation
-        print("Custom Async method start called")
         asynchronousOperation.start()
         
         //As we have started a async operation we haven't blocked our thread, So we can start some thing else here and both will execute parallel.
@@ -66,6 +62,12 @@ class Operator {
                 print("Fetched Image file size = \(data.count)")
             }
         }
+        
+    }
+    
+    //MARK: - Perform Operations Using Operation Queue
+    func pefromOperationsUsingQueue() {
+        let queue = OperationQueue()
         
     }
 }

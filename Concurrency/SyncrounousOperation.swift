@@ -34,13 +34,14 @@ class SynchronousOperation: Operation {
     override func main() {
         //check if operation was cancelled before performing any thing
         if !isCancelled {
+            print("Custom Sync operation has started")
             let data = try? Data(contentsOf: imageURL)
             if data != nil {
-                let image = NSImage(data: data!) 
+                let image = NSImage(data: data!)
                 self.image = image
             }
         }
-        
+        print("Custom Sync operation has ended")
     }
 
 }
