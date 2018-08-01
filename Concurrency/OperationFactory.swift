@@ -28,8 +28,8 @@ class OperationFactory {
     
     //Create and return a custom operation, for loading an image from the network syncrounously
     //See LoadImageOperation class to see the implementation of the operation returned by this method.
-    func customSyncronousOperation() -> SyncronousOperation {
-        let operation = SyncronousOperation(with: URL(string: "https://saturn.jpl.nasa.gov/system/resources/detail_files/7848_PIA12797-full.jpg")!)
+    func customSyncronousOperation() -> SynchronousOperation {
+        let operation = SynchronousOperation(with: URL(string: "https://saturn.jpl.nasa.gov/system/resources/detail_files/7848_PIA12797-full.jpg")!)
         return operation
     }
     

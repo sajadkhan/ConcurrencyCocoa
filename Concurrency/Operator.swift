@@ -18,19 +18,19 @@ class Operator {
     private let operations = OperationFactory()
     
     //Run a custom Synronous Operation
-    func runSyncronousCustomOperation() {
+    func runSynchronousCustomOperation() {
         //Get an instance of operation, look at Operations instance method customSyncrounousOperation to know how this operation is created.
-        let syncrounousOperation = operations.customSyncronousOperation()
+        let synchrounousOperation = operations.customSyncronousOperation()
         
         //Start the operation
         print("Custom sync operation start")
-        syncrounousOperation.start()
+        synchrounousOperation.start()
         
         //As this is a syncrounous operation below code will only executed once the operation is comolete
         print("Custom sync operation ends")
         
         //Now after operation comletion look at the results of the operation
-        if let image = syncrounousOperation.image {
+        if let image = synchrounousOperation.image {
             print("Fetche Image dimensions = \(image.size.width) X \(image.size.height)")
             if let data = image.tiffRepresentation {
                 print("Fetched Image file size = \(data.count)")

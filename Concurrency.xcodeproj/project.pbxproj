@@ -11,6 +11,7 @@
 		068017FD21109F68001DD070 /* OperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068017FC21109F68001DD070 /* OperationFactory.swift */; };
 		06B4D2812110A37500C3D032 /* SyncrounousOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B4D2802110A37500C3D032 /* SyncrounousOperation.swift */; };
 		06B4D283211170FA00C3D032 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B4D282211170FA00C3D032 /* Operator.swift */; };
+		06B4D28521117D9000C3D032 /* AsynchronousOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B4D28421117D9000C3D032 /* AsynchronousOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,7 @@
 		068017FC21109F68001DD070 /* OperationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationFactory.swift; sourceTree = "<group>"; };
 		06B4D2802110A37500C3D032 /* SyncrounousOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncrounousOperation.swift; sourceTree = "<group>"; };
 		06B4D282211170FA00C3D032 /* Operator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
+		06B4D28421117D9000C3D032 /* AsynchronousOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchronousOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				06B4D282211170FA00C3D032 /* Operator.swift */,
 				068017FC21109F68001DD070 /* OperationFactory.swift */,
 				06B4D2802110A37500C3D032 /* SyncrounousOperation.swift */,
+				06B4D28421117D9000C3D032 /* AsynchronousOperation.swift */,
 			);
 			path = Concurrency;
 			sourceTree = "<group>";
@@ -130,6 +133,7 @@
 			files = (
 				06B4D2812110A37500C3D032 /* SyncrounousOperation.swift in Sources */,
 				06B4D283211170FA00C3D032 /* Operator.swift in Sources */,
+				06B4D28521117D9000C3D032 /* AsynchronousOperation.swift in Sources */,
 				060B3966211058640043E22E /* main.swift in Sources */,
 				068017FD21109F68001DD070 /* OperationFactory.swift in Sources */,
 			);

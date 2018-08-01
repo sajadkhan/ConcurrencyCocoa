@@ -11,10 +11,10 @@ import AppKit
 
 //LoadImageOperation is subclass of Operation. It is a syncrounous operation so only a custom intializer and main method is implemented.
 
-class SyncronousOperation: Operation {
+class SynchronousOperation: Operation {
 
-    //Public property to be set before starting the operation.
-    private var imageURL: URL?
+    //private property to be set in intialization to save url for fetching image
+    private var imageURL: URL!
     
     //Public (only get) property to fetch the image set as a result of operation
     private(set) var image: NSImage? 
@@ -34,9 +34,9 @@ class SyncronousOperation: Operation {
     override func main() {
         //check if operation was cancelled before performing any thing
         if !isCancelled {
-            if let imageURL = imageURL,
-                let data = try? Data(contentsOf: imageURL),
-                let image = NSImage(data: data) {
+            let data = try? Data(contentsOf: imageURL)
+            if data != nil {
+                let image = NSImage(data: data!) 
                 self.image = image
             }
         }
