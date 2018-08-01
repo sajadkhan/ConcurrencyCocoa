@@ -18,7 +18,7 @@ class Operator {
     private let operations = OperationFactory()
     
     //Run a custom Synronous Operation
-    func runSynchronousCustomOperation() {
+    func runSynchronousOperation() {
         //Get an instance of operation, look at Operations instance method customSyncrounousOperation to know how this operation is created.
         let synchrounousOperation = operations.customSyncronousOperation()
         
@@ -36,6 +36,11 @@ class Operator {
                 print("Fetched Image file size = \(data.count)")
             }
         }
+    }
+    
+    //Run a s
+    func runAsynchronousOperation() {
+        
     }
 }
 

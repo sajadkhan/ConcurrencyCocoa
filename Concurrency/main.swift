@@ -12,7 +12,7 @@ import Foundation
 let myOperator = Operator()
 
 //Create and run a custom syncronous operation
-myOperator.runSynchronousCustomOperation()
+myOperator.runSynchronousOperation()
 
 
 
