@@ -36,7 +36,7 @@ class OperationFactory {
     //Create and return a custom asynchronous operation, for loading an image from network.
     //See AsynchronousOperation class to see the implementation of the operation returned by this method.
     func customAsynchronousOperation() -> AsynchronousOperation {
-        let operation = AsynchronousOperation(with: URL(string: "https://saturn.jpl.nasa.gov/system/resources/detail_files/7848_PIA12797-full.jpg")!)
+        let operation = AsynchronousOperation(with: URL(string: "https://saturn.jpl.nasa.gov/system/resources/detail_files/7846_PIA21923_CassiniVIMSTitan_MAIN-1200w.jpg")!)
         return operation
     }
     
